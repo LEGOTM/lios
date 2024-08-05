@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
+import WelcomeScreen from './components/WelcomeScreen';
 import ExplosiveSelection from './components/ExplosiveSelection';
-import './App.css'; // Подключите стили
+import './App.css';
 
 export const tg = window.Telegram.WebApp;
 
-
 function App() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
 
   const getHeaderText = () => {
     switch (step) {
@@ -19,18 +19,28 @@ function App() {
       case 4:
         return "Результат";
       default:
-        return "Выберите тип взрывчатки";
+        return "";
     }
+  };
+
+  const handleNextStep = () => {
+    setStep((prevStep) => prevStep + 1);
   };
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>{getHeaderText()}</h1>
-      </header>
-      <div className="App-content">
-        <ExplosiveSelection setStep={setStep} />
-      </div>
+      {step === 0 ? (
+        <WelcomeScreen onNext={handleNextStep} />
+      ) : (
+        <>
+          <header className="App-header">
+            <h1>{getHeaderText()}</h1>
+          </header>
+          <div className="App-content">
+            <ExplosiveSelection setStep={setStep} />
+          </div>
+        </>
+      )}
     </div>
   );
 }
