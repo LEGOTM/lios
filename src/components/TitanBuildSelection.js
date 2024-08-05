@@ -13,6 +13,12 @@ const TitanBuildSelection = ({ onSelectBuildType }) => {
   const [selectedBuild, setSelectedBuild] = useState(null);
   const [quantity, setQuantity] = useState(1);
 
+  useEffect(() => {
+    if (selectedBuild) {
+      onSelectBuildType(selectedBuild, quantity);
+    }
+  }, [selectedBuild, quantity, onSelectBuildType]);
+
   const handleSelectBuild = (name) => {
     setSelectedBuild(name);
     setQuantity(1); // Сбросить количество при выборе нового типа
@@ -27,12 +33,6 @@ const TitanBuildSelection = ({ onSelectBuildType }) => {
   const handleDecrease = (name) => {
     if (selectedBuild === name) {
       setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
-    }
-  };
-
-  const handleConfirmSelection = () => {
-    if (selectedBuild) {
-      onSelectBuildType(selectedBuild, quantity);
     }
   };
 
@@ -59,9 +59,6 @@ const TitanBuildSelection = ({ onSelectBuildType }) => {
           ))}
         </div>
       </div>
-      {selectedBuild && (
-        <button className="confirm" onClick={handleConfirmSelection}>Подтвердить выбор</button>
-      )}
     </div>
   );
 };
