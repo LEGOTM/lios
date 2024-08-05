@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './MetalBuildSelection.css';
 
 const metalBuildTypes = [
@@ -12,6 +12,12 @@ const metalBuildTypes = [
 const MetalBuildSelection = ({ onSelectBuildType }) => {
   const [selectedBuild, setSelectedBuild] = useState(null);
   const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    if (selectedBuild) {
+      onSelectBuildType(selectedBuild, quantity);
+    }
+  }, [selectedBuild, quantity, onSelectBuildType]);
 
   const handleSelectBuild = (name) => {
     setSelectedBuild(name);
@@ -27,12 +33,6 @@ const MetalBuildSelection = ({ onSelectBuildType }) => {
   const handleDecrease = (name) => {
     if (selectedBuild === name) {
       setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
-    }
-  };
-
-  const handleConfirmSelection = () => {
-    if (selectedBuild) {
-      onSelectBuildType(selectedBuild, quantity);
     }
   };
 
@@ -59,9 +59,6 @@ const MetalBuildSelection = ({ onSelectBuildType }) => {
           ))}
         </div>
       </div>
-      {selectedBuild && (
-        <button className="confirm" onClick={handleConfirmSelection}>Подтвердить выбор</button>
-      )}
     </div>
   );
 };
