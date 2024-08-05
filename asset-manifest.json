@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lios/static/css/main.9797978d.css",
-    "main.js": "/lios/static/js/main.32198823.js",
+    "main.js": "/lios/static/js/main.c776608c.js",
     "static/js/453.83bdee10.chunk.js": "/lios/static/js/453.83bdee10.chunk.js",
     "index.html": "/lios/index.html",
     "main.9797978d.css.map": "/lios/static/css/main.9797978d.css.map",
-    "main.32198823.js.map": "/lios/static/js/main.32198823.js.map",
+    "main.c776608c.js.map": "/lios/static/js/main.c776608c.js.map",
     "453.83bdee10.chunk.js.map": "/lios/static/js/453.83bdee10.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9797978d.css",
-    "static/js/main.32198823.js"
+    "static/js/main.c776608c.js"
   ]
 }
