@@ -7,11 +7,13 @@
   
   .material-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* Автоматическое заполнение колонок */
+    gap: 20px; /* Расстояние между карточками */
+    justify-items: center; /* Центрирует карточки по горизонтали */
     width: 100%;
+    max-width: 800px; /* Максимальная ширина для контейнера */
     margin: 0 auto; /* Центрирование контейнера по горизонтали */
-    max-width: 800px;
+    box-sizing: border-box;
   }
   
   .material-card {
@@ -42,6 +44,9 @@
   
   h3 {
     margin: 0;
-    font-size: 17px;
-    text-align: center;
+    font-size: 17px; /* Увеличьте размер шрифта, чтобы текст был виден */
+    line-height: 1.2; /* Высота строки для управления межстрочным интервалом */
+    color: #f0f0f0; /* Цвет текста, который будет виден на тёмном фоне */
+    word-wrap: break-word; /* Переносит длинные слова на новую строку */
+    text-align: center; /* Центрирует текст по горизонтали */
   }
