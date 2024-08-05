@@ -17,20 +17,18 @@
   }
   
   .material-card {
-    background-color: #444;
-    border: 2px solid #888;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s, border-color 0.2s;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 10px;
+    border: 2px solid #888; /* Измените цвет бордюра */
+    border-radius: 8px; /* Измените радиус */
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+    overflow: hidden;
     width: 100%;
-    max-width: 100px;
-    min-height: 100px;
+    max-width: 100px; /* Измените максимальную ширину */
+    min-height: 100px; /* Измените минимальную высоту */
     box-sizing: border-box;
   }
   
