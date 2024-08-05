@@ -37,25 +37,6 @@
   box-sizing: border-box;
 }
 
-.explosive-card, .material-card {
-  background-color: #444;
-  border: 2px solid #888;
-  border-radius: 8px;
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s, border-color 0.2s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 150px;
-  min-height: 150px;
-  box-sizing: border-box;
-  overflow: hidden; /* Прячем выходящее за границы содержимое */
-}
-
 .explosive-card:hover, .material-card:hover {
   background-color: #444; /* Немного светлее при наведении */
 }
