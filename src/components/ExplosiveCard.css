@@ -17,6 +17,23 @@
   overflow: hidden; /* Прячем выходящее за границы содержимое */
 }
 
+.explosive-grid-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.explosive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
 .explosive-card:hover {
   background-color: #444;
 }

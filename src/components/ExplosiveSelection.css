@@ -20,23 +20,6 @@
   z-index: 1000; /* Убедитесь, что заголовок выше других элементов */
 }
 
-.explosive-grid-wrapper, .material-grid-wrapper {
-  display: flex;
-  justify-content: center; /* Центрирует контейнер карточек по горизонтали */
-  width: 100%;
-}
-
-.explosive-grid, .material-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Автоматическое заполнение колонок */
-  gap: 20px; /* Расстояние между карточками */
-  justify-items: center; /* Центрирует карточки по горизонтали */
-  width: 100%;
-  max-width: 800px; /* Максимальная ширина для контейнера */
-  margin: 0 auto; /* Центрирование контейнера по горизонтали */
-  box-sizing: border-box;
-}
-
 .explosive-card:hover, .material-card:hover {
   background-color: #444; /* Немного светлее при наведении */
 }
