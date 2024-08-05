@@ -168,6 +168,15 @@ const ExplosiveSelection = ({ setStep }) => {
     }
   }, [selectedMaterial, step]);
 
+  useEffect(() => {
+    if (selectedBuildType && quantity > 0 && step === 3) {
+      tg.MainButton.text = "Подтвердить выбор";
+      tg.MainButton.show();
+      tg.MainButton.offClick(handleConfirmSelection);
+      tg.MainButton.onClick(handleConfirmSelection);
+    }
+  }, [selectedBuildType, quantity, step]);
+
   const handleSelectExplosive = (name) => {
     setSelectedExplosive(name);
   };
@@ -189,7 +198,6 @@ const ExplosiveSelection = ({ setStep }) => {
   const handleSelectBuildType = (name, quantity) => {
     setSelectedBuildType(name);
     setQuantity(quantity);
-    // Instead of going to step 4 here, show the Telegram button
     tg.MainButton.text = "Подтвердить выбор";
     tg.MainButton.show();
     tg.MainButton.offClick(handleConfirmSelection);
@@ -197,7 +205,7 @@ const ExplosiveSelection = ({ setStep }) => {
   };
 
   const handleConfirmSelection = () => {
-    localSetStep(4); // Now move to step 4
+    localSetStep(4); // Переход к следующему шагу
     tg.MainButton.hide();
   };
 
