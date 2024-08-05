@@ -17,15 +17,21 @@
   }
   
   .material-card {
+    background-color: #444;
+    border: 2px solid #888;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s, border-color 0.2s;
-    overflow: hidden; /* Прячем выходящее за границы содержимое */
+    justify-content: center;
+    width: 100%;
+    max-width: 100px;
+    min-height: 100px;
+    box-sizing: border-box;
   }
   
   .material-card.selected {
