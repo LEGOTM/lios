@@ -189,7 +189,16 @@ const ExplosiveSelection = ({ setStep }) => {
   const handleSelectBuildType = (name, quantity) => {
     setSelectedBuildType(name);
     setQuantity(quantity);
-    localSetStep(4); // Переход к следующему шагу сразу после выбора типа постройки и количества
+    // Instead of going to step 4 here, show the Telegram button
+    tg.MainButton.text = "Подтвердить выбор";
+    tg.MainButton.show();
+    tg.MainButton.offClick(handleConfirmSelection);
+    tg.MainButton.onClick(handleConfirmSelection);
+  };
+
+  const handleConfirmSelection = () => {
+    localSetStep(4); // Now move to step 4
+    tg.MainButton.hide();
   };
 
   const calculateExplosiveNeeded = () => {
